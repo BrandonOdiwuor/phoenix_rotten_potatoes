@@ -1,0 +1,22 @@
+<h1>Show movie</h1>
+
+<ul>
+  <li>
+    <strong> Name: </strong>
+    <%= @movie.title %>
+  </li>
+  <li>
+    <strong>Rating: </strong>
+    <%= @movie.rating %>
+  </li>
+  <li>
+    <strong>Year: </strong>
+    <%= @movie.year %>
+  </li>
+</ul>
+
+<%= link "Back", to: movie_path(@conn, :index)%>
+<%= link"Edit", to: movie_path(@conn, :edit, @movie) %>
+<%= link "Delete", to: movie_path(@conn, :delete, @movie),
+                    method: :delete, data: [confirm: "Are you sure?"],
+                    class: "btn btn-danger btn-xs" %>
